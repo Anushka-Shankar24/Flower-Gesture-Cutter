@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Flower Cut Game 🌸</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- MediaPipe Camera -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+
+    <!-- MediaPipe Drawing -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+
+    <!-- MediaPipe Hands -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+
+</head>
+
+
+<body>
+
+    <!-- =====================================
+         CAMERA
+    ====================================== -->
+
+    <video id="video"
+           autoplay
+           muted
+           playsinline>
+    </video>
+
+
+    <!-- =====================================
+         HAND TRACKING CANVAS
+    ====================================== -->
+
+    <canvas id="canvas"></canvas>
+
+
+    <!-- =====================================
+         GAME UI
+    ====================================== -->
+
+    <div class="top-bar">
+
+        <div class="title">
+            🌸 Flower Cutter
+        </div>
+
+        <div class="score-box">
+            🌸 Cut:
+            <span id="score">0</span>
+        </div>
+
+        <div class="life-box">
+            ❤️
+            <span id="lives">3</span>
+        </div>
+
+        <div class="timer-box">
+            ⏱️
+            <span id="timer">60</span>
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         INSTRUCTION
+    ====================================== -->
+
+    <div class="instruction">
+
+        ✋ Move your hand and cut the falling flowers!
+
+    </div>
+
+
+    <!-- =====================================
+         FLOWER GAME AREA
+    ====================================== -->
+
+    <div id="gameArea"></div>
+
+
+    <!-- =====================================
+         GAME OVER
+    ====================================== -->
+
+    <div id="gameOver"
+         class="game-over">
+
+        <div class="game-card">
+
+            <h1>
+                🌸 Game Over 🌸
+            </h1>
+
+            <h2>
+                Flowers Cut:
+                <span id="finalScore">0</span>
+            </h2>
+
+            <button onclick="restartGame()">
+                🔄 Play Again
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
